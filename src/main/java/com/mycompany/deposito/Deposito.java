@@ -10,16 +10,20 @@ package com.mycompany.deposito;
 public class Deposito {
 
     public static void main(String[] args) {
-        CCuenta miCuenta;
+        CCuenta cuenta1;
         double saldoActual;
-        miCuenta = new CCuenta("Antonio López", "1000-2365-85-1230456789", 2500, 0);
-        saldoActual = miCuenta.estado();
+        cuenta1 = new CCuenta("Antonio López", "1000-2365-85-1230456789", 2500, 0);
+        saldoActual = cuenta1.estado();
         System.out.println("El saldo actual es " + saldoActual);
-        // Operaciones de ingreso y retiro
-        miCuenta.retirar(2300);
-        miCuenta.ingresar(685);
+        operaciones(cuenta1);
 
-        saldoActual = miCuenta.estado();
+        saldoActual = cuenta1.estado();
         System.out.println("El saldo actual es " + saldoActual);
+    }
+
+    private static void operaciones(CCuenta cuenta1) {
+        // Operaciones de ingreso y retiro
+        cuenta1.retirar(2300);
+        cuenta1.ingresar(685);
     }
 }
